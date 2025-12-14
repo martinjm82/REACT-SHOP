@@ -1,14 +1,19 @@
-// export por defecto
-import React from 'react';
-import Navbar from './Navbar.jsx';
+import React from "react";
+import Navbar from "./Navbar.jsx";
 
-export default function Layout({ children, cartCount, isAuthed, onToggleAuth,onClearCart = () => {} }) {
+export default function Layout({
+  children,
+  cartCount,
+  isAuthed,
+  onLogout,
+  onClearCart = () => {},
+}) {
   return (
     <>
-    <Navbar
+      <Navbar
         cartCount={cartCount}
         isAuthed={isAuthed}
-        onToggleAuth={onToggleAuth}
+        onLogout={onLogout}
         onClearCart={onClearCart}
       />
       <main className="container my-4">{children}</main>
